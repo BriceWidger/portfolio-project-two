@@ -6,21 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
+    <aside class="timeline">
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
         <div class="logo">
-            <h1>My Portfolio</h1>
+            <img src="images/profile-pic.png" alt="Logo">
         </div>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    </aside>
 
     <main>
         <section id="introduction" class="full-page">
@@ -36,7 +36,44 @@
 
         <section id="projects" class="full-page">
             <h2>Projects</h2>
-            <p>[Brief description of your projects]</p>
+            <div class="project-card">
+                <img src="images/project1.png" alt="Project 1">
+                <div class="project-card-content">
+                    <h3>Project 1</h3>
+                    <p>[Brief description of project 1]</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="images/project2.png" alt="Project 2">
+                <div class="project-card-content">
+                    <h3>Project 2</h3>
+                    <p>[Brief description of project 2]</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="full-page">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill">
+                    <h3>HTML</h3>
+                    <div class="progress">
+                        <div class="progress-bar" data-progress="90"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h3>CSS</h3>
+                    <div class="progress">
+                        <div class="progress-bar" data-progress="80"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h3>JavaScript</h3>
+                    <div class="progress">
+                        <div class="progress-bar" data-progress="70"></div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="contact" class="full-page">
