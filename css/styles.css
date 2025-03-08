@@ -2,18 +2,18 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0; /* Light grey background */
+    background-color: #f8f9fa; /* Light grey background */
     cursor: url('images/custom-cursor.png'), auto;
-    color: #333; /* Dark grey text */
+    color: #343a40; /* Dark grey text */
 }
 
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
-    color: #2c3e50; /* Dark blue text */
+    color: #343a40; /* Dark grey text */
 }
 
 a {
-    color: #3498db; /* Blue links */
+    color: #007bff; /* Blue links */
     text-decoration: none;
 }
 
@@ -24,7 +24,7 @@ a:hover {
 .introduction {
     padding: 20px;
     text-align: center;
-    background: #ecf0f1; /* Light grey background */
+    background: #ffffff; /* White background */
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -32,7 +32,7 @@ a:hover {
 .introduction img {
     max-width: 100px; /* Corrected from 10px to 100px */
     border-radius: 50%;
-    border: 2px solid #2c3e50; /* Dark blue border */
+    border: 2px solid #343a40; /* Dark grey border */
 }
 
 .section {
@@ -54,7 +54,7 @@ a:hover {
 .profile-pic {
     max-width: 200px;
     border-radius: 50%;
-    border: 2px solid #2c3e50; /* Dark blue border */
+    border: 2px solid #343a40; /* Dark grey border */
 }
 
 .timeline {
@@ -63,7 +63,7 @@ a:hover {
     left: 0;
     height: 100%;
     width: 200px;
-    background: #2c3e50; /* Dark blue background */
+    background: #343a40; /* Dark grey background */
     padding: 20px 0;
     display: flex;
     flex-direction: column;
@@ -85,7 +85,7 @@ a:hover {
 }
 
 .timeline ul li a {
-    color: #ecf0f1; /* Light grey text */
+    color: #f8f9fa; /* Light grey text */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
@@ -95,7 +95,7 @@ a:hover {
 
 .timeline ul li a:hover,
 .timeline ul li a.active {
-    color: #e74c3c; /* Red accent color */
+    color: #007bff; /* Blue accent color */
 }
 
 .timeline .logo {
@@ -105,7 +105,7 @@ a:hover {
 .timeline .logo img {
     max-width: 100px;
     border-radius: 50%;
-    border: 2px solid #ecf0f1; /* Light grey border */
+    border: 2px solid #f8f9fa; /* Light grey border */
 }
 
 .project-card {
@@ -145,7 +145,7 @@ a:hover {
 
 .skill .progress {
     width: 100%;
-    background: #bdc3c7; /* Light grey background */
+    background: #e9ecef; /* Light grey background */
     border-radius: 8px;
     overflow: hidden;
     margin-top: 10px;
@@ -153,7 +153,7 @@ a:hover {
 
 .skill .progress-bar {
     height: 10px;
-    background: #e74c3c; /* Red accent color */
+    background: #007bff; /* Blue accent color */
     width: 0;
     transition: width 1s;
 }
@@ -168,6 +168,12 @@ a:hover {
 
 .skill .progress-bar[data-progress="70"] {
     width: 70%;
+}
+
+footer {
+    text-align: center;
+    color: #343a40; /* Dark grey text */
+    margin-top: 20px; /* Add margin to separate from content */
 }
 
 @media (max-width: 1024px) {
