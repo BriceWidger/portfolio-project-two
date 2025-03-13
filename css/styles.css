@@ -153,6 +153,8 @@ a:hover {
   transition: transform 0.3s, box-shadow 0.3s;
   overflow: hidden;
   margin-bottom: 20px;
+  width: 100%; /* Ensure the project card takes full width */
+  max-width: 300px; /* Set a maximum width for the project card */
 }
 
 .project-card:hover {
@@ -229,6 +231,10 @@ footer {
 
 .toggle-container label {
   cursor: pointer;
+}
+
+.small-image {
+  max-width: 100%; /* Make the Project 1 image smaller */
 }
 
 @media (max-width: 1024px) {
