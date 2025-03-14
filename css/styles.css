@@ -77,6 +77,11 @@ a:hover {
   color: var(--link-hover-color);
 }
 
+a:focus {
+  outline: 2px dashed var(--link-hover-color);
+  outline-offset: 4px;
+}
+
 button {
   background-color: var(--link-color);
   color: #fff;
@@ -85,11 +90,12 @@ button {
   padding: 12px 24px; /* Larger padding for better usability */
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 button:hover {
   background-color: var(--link-hover-color);
+  transform: scale(1.05);
 }
 
 .introduction, .section {
@@ -155,6 +161,11 @@ button:hover {
 .timeline ul li a:hover, .timeline ul li a.active {
   color: var(--link-hover-color);
   border-bottom: 2px solid var(--link-hover-color);
+}
+
+.timeline ul li a:focus {
+  outline: 2px dashed var(--link-hover-color);
+  outline-offset: 4px;
 }
 
 #theme-toggle {

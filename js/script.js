@@ -5,23 +5,35 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeToggle = document.getElementById("theme-toggle");
   const themeLabel = document.getElementById("theme-label");
 
+  sections.forEach((section) => {
+    if (section.id !== "introduction") section.classList.add("hidden");
+  });
+
   themeToggle.addEventListener("change", () => {
     const isDarkMode = themeToggle.checked;
     document.body.classList.toggle("dark-mode", isDarkMode);
     themeLabel.textContent = isDarkMode ? "Dark Mode" : "Light Mode";
   });
 
-  window.addEventListener("scroll", () => {
+  const debounce = (func, wait = 20) => {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+  };
+
+  const handleScroll = () => {
     let current = "";
 
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
 
-      if (section.id !== "introduction" && pageYOffset >= sectionTop - window.innerHeight / 1.3) {
+      if (section.id !== "introduction" && window.scrollY >= sectionTop - window.innerHeight / 1.3) {
         section.classList.add("visible");
       }
 
-      if (pageYOffset >= sectionTop - 60) {
+      if (window.scrollY >= sectionTop - 60) {
         current = section.getAttribute("id");
       }
     });
@@ -36,5 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         bar.style.width = bar.getAttribute("data-progress") + "%";
       }
     });
-  });
+  };
+
+  window.addEventListener("scroll", debounce(handleScroll));
 });
