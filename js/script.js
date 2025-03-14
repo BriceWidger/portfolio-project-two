@@ -1,20 +1,26 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".timeline ul li a");
   const progressBars = document.querySelectorAll(".progress-bar");
   const themeToggle = document.getElementById("theme-toggle");
   const themeLabel = document.getElementById("theme-label");
 
-  themeToggle.addEventListener("change", function () {
-    document.body.classList.toggle("dark-mode", themeToggle.checked);
-    themeLabel.textContent = themeToggle.checked ? "Dark Mode" : "Light Mode";
+  themeToggle.addEventListener("change", () => {
+    const isDarkMode = themeToggle.checked;
+    document.body.classList.toggle("dark-mode", isDarkMode);
+    themeLabel.textContent = isDarkMode ? "Dark Mode" : "Light Mode";
   });
 
-  window.addEventListener("scroll", function () {
+  window.addEventListener("scroll", () => {
     let current = "";
 
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
+
+      if (section.id !== "introduction" && pageYOffset >= sectionTop - window.innerHeight / 1.3) {
+        section.classList.add("visible");
+      }
+
       if (pageYOffset >= sectionTop - 60) {
         current = section.getAttribute("id");
       }
@@ -22,15 +28,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     navLinks.forEach((link) => {
       link.classList.remove("active");
-      if (link.getAttribute("href").includes(current)) {
-        link.classList.add("active");
-      }
+      if (link.getAttribute("href").includes(current)) link.classList.add("active");
     });
 
     progressBars.forEach((bar) => {
-      const barTop = bar.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      if (barTop < windowHeight - 50) {
+      if (bar.getBoundingClientRect().top < window.innerHeight - 50) {
         bar.style.width = bar.getAttribute("data-progress") + "%";
       }
     });
