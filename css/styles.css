@@ -8,38 +8,36 @@ body {
 }
 
 :root {
-  --background-color: #f8f9fa; /* Light mode background */
-  --text-color: #343a40; /* Light mode text */
-  --link-color: #007bff; /* Light mode link */
-  --link-hover-color: #0056b3; /* Light mode link hover */
-  --card-background: #ffffff; /* Light mode card background */
-  --card-shadow: rgba(0, 0, 0, 0.1); /* Light mode card shadow */
-  --border-color: #343a40; /* Light mode border */
-  --timeline-background: #343a40; /* Light mode timeline background */
-  --timeline-text: #f8f9fa; /* Light mode timeline text */
-  --timeline-hover: #007bff; /* Light mode timeline hover */
-  --progress-background: #e9ecef; /* Light mode progress background */
-  --progress-bar: #007bff; /* Light mode progress bar */
+  --background-color: #f0f2f5;
+  --text-color: #333;
+  --link-color: #007bff;
+  --link-hover-color: #0056b3;
+  --card-background: #fff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --border-color: #ddd;
+  --timeline-background: #fff;
+  --timeline-text: #333;
+  --timeline-hover: #007bff;
+  --progress-background: #e9ecef;
+  --progress-bar: #007bff;
 }
 
 body.dark-mode {
-  --background-color: #1e1e1e; /* Dark mode background */
-  --text-color: #f8f9fa; /* Dark mode text */
-  --link-color: #66b2ff; /* Dark mode link */
-  --link-hover-color: #3399ff; /* Dark mode link hover */
-  --card-background: #2c2c2c; /* Dark mode card background */
-  --card-shadow: rgba(0, 0, 0, 0.5); /* Dark mode card shadow */
-  --border-color: #f8f9fa; /* Dark mode border */
-  --timeline-background: #2c2c2c; /* Dark mode timeline background */
-  --timeline-text: #f8f9fa; /* Dark mode timeline text */
-  --timeline-hover: #66b2ff; /* Dark mode timeline hover */
-  --progress-background: #3a3a3a; /* Dark mode progress background */
-  --progress-bar: #66b2ff; /* Dark mode progress bar */
+  --background-color: #1e1e1e;
+  --text-color: #f8f9fa;
+  --link-color: #66b2ff;
+  --link-hover-color: #3399ff;
+  --card-background: #2c2c2c;
+  --card-shadow: rgba(0, 0, 0, 0.5);
+  --border-color: #444;
+  --timeline-background: #2c2c2c;
+  --timeline-text: #f8f9fa;
+  --timeline-hover: #66b2ff;
+  --progress-background: #3a3a3a;
+  --progress-bar: #66b2ff;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-family: "Montserrat", sans-serif;
   color: var(--text-color);
   text-transform: uppercase;
@@ -64,7 +62,7 @@ a:hover {
   color: var(--link-hover-color);
 }
 
-.introduction {
+.introduction, .section {
   padding: 40px;
   text-align: center;
   background: var(--card-background);
@@ -73,19 +71,11 @@ a:hover {
   margin: 20px;
 }
 
-.introduction img {
-  max-width: 150px; /* Increased size for better visibility */
+.introduction img, .profile-pic {
+  max-width: 150px;
   border-radius: 50%;
   border: 3px solid var(--border-color);
   margin-bottom: 20px;
-}
-
-.section {
-  padding: 40px;
-  margin: 20px;
-  background: var(--card-background);
-  border-radius: 12px;
-  box-shadow: 0 4px 8px var(--card-shadow);
 }
 
 .full-page {
@@ -96,37 +86,30 @@ a:hover {
   align-items: center;
 }
 
-.profile-pic {
-  max-width: 200px;
-  border-radius: 50%;
-  border: 3px solid var(--border-color);
-}
-
 .timeline {
+  width: 100%;
+  background: var(--timeline-background);
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 220px; /* Slightly increased width for better spacing */
-  background: var(--timeline-background);
-  padding: 20px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between; /* Ensure space between items */
+  z-index: 1000;
+  box-shadow: 0 4px 8px var(--card-shadow);
 }
 
 .timeline ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .timeline ul li {
-  margin: 20px 0;
-  width: 100%;
-  text-align: center;
+  margin: 0 20px;
 }
 
 .timeline ul li a {
@@ -134,17 +117,40 @@ a:hover {
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
-  display: block;
   padding: 10px 0;
 }
 
-.timeline ul li a:hover,
-.timeline ul li a.active {
+.timeline ul li a:hover, .timeline ul li a.active {
   color: var(--timeline-hover);
 }
 
-.timeline .logo {
-  display: none; /* Hide the logo section */
+.theme-toggle-label {
+  margin-left: auto;
+  margin-right: 10px;
+  color: var(--timeline-text);
+}
+
+#theme-toggle, #theme-label {
+  margin-right: 10px;
+  color: var(--timeline-text);
+}
+
+.toggle-container {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background: var(--card-background);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--card-shadow);
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+}
+
+.toggle-container label {
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 .projects-container {
@@ -161,10 +167,9 @@ a:hover {
   transition: transform 0.3s, box-shadow 0.3s;
   overflow: hidden;
   margin-bottom: 20px;
-  width: 100%; /* Ensure the project card takes full width */
-  max-width: 300px; /* Set a maximum width for the project card */
-  flex: 1 1 calc(50% - 40px); /* Adjust width to fit two cards side by side */
-  max-width: 400px; /* Set a maximum width for the project card */
+  width: 100%;
+  max-width: 400px;
+  flex: 1 1 calc(50% - 40px);
 }
 
 .project-card:hover {
@@ -189,7 +194,7 @@ a:hover {
 }
 
 .skill {
-  width: 120px; /* Increased width for better visibility */
+  width: 120px;
   text-align: center;
 }
 
@@ -202,7 +207,7 @@ a:hover {
 }
 
 .skill .progress-bar {
-  height: 12px; /* Increased height for better visibility */
+  height: 12px;
   background: var(--progress-bar);
   width: 0;
   transition: width 1s;
@@ -231,28 +236,10 @@ a:hover {
 footer {
   text-align: center;
   color: var(--text-color);
-  margin-top: 20px; /* Add margin to separate from content */
+  margin-top: 20px;
   padding: 20px;
   background: var(--card-background);
   box-shadow: 0 -4px 8px var(--card-shadow);
-}
-
-.toggle-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: var(--card-background);
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px var(--card-shadow);
-}
-
-.toggle-container label {
-  cursor: pointer;
-}
-
-.small-image {
-  max-width: 100%; /* Make the Project 1 image smaller */
 }
 
 .container {
@@ -263,7 +250,6 @@ footer {
 
 @media (max-width: 1024px) {
   .timeline {
-    width: 100%;
     height: auto;
     position: relative;
     flex-direction: row;
@@ -272,7 +258,6 @@ footer {
   }
 
   .timeline ul {
-    display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
@@ -282,17 +267,8 @@ footer {
     margin: 0;
   }
 
-  .timeline .logo {
-    margin: 0;
-  }
-
   main {
-    margin-left: 0;
-    padding-top: 60px; /* Adjust for the fixed timeline */
-  }
-
-  footer {
-    margin-left: 0;
+    margin-top: 60px;
   }
 }
 
@@ -317,12 +293,20 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .introduction img,
-  .profile-pic {
+  .introduction img, .profile-pic {
     max-width: 80px;
   }
 
   .skill {
     width: 80px;
+  }
+
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    max-width: 100%;
   }
 }
