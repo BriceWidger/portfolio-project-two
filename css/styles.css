@@ -210,6 +210,11 @@ button:hover {
   padding: 20px;
 }
 
+.project-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .skills {
   display: flex;
   flex-wrap: wrap;
