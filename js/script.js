@@ -29,7 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
 
-      if (section.id !== "introduction" && window.scrollY >= sectionTop - window.innerHeight / 1.3) {
+      if (
+        section.id !== "introduction" &&
+        window.scrollY >= sectionTop - window.innerHeight / 1.3
+      ) {
         section.classList.add("visible");
       }
 
@@ -40,7 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navLinks.forEach((link) => {
       link.classList.remove("active");
-      if (link.getAttribute("href").includes(current)) link.classList.add("active");
+      if (link.getAttribute("href").includes(current))
+        link.classList.add("active");
     });
 
     progressBars.forEach((bar) => {

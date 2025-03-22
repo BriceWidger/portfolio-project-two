@@ -6,7 +6,7 @@ body {
   color: var(--text-color);
   line-height: 1.8;
   cursor: url("images/custom-cursor.png"), auto;
-  scroll-behavior: smooth; /* Smooth scrolling for better navigation */
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -17,9 +17,6 @@ body {
   --card-background: #ffffff;
   --card-shadow: rgba(0, 0, 0, 0.1);
   --border-color: #e0e0e0;
-  --timeline-background: #ffffff;
-  --timeline-text: #2c3e50;
-  --timeline-hover: #3498db;
   --progress-background: #e9ecef;
   --progress-bar: #3498db;
 }
@@ -32,9 +29,6 @@ body.dark-mode {
   --card-background: #2c2c2c;
   --card-shadow: rgba(0, 0, 0, 0.5);
   --border-color: #444;
-  --timeline-background: #2c2c2c;
-  --timeline-text: #f8f9fa;
-  --timeline-hover: #66b2ff;
   --progress-background: #3a3a3a;
   --progress-bar: #66b2ff;
 }
@@ -47,7 +41,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 2.8rem; /* Slightly larger for emphasis */
+  font-size: 2.8rem;
   margin-bottom: 20px;
 }
 
@@ -62,7 +56,7 @@ h3 {
 }
 
 p {
-  font-size: 1.1rem; /* Slightly larger for readability */
+  font-size: 1.1rem;
   margin: 0 0 20px;
 }
 
@@ -77,17 +71,12 @@ a:hover {
   color: var(--link-hover-color);
 }
 
-a:focus {
-  outline: 2px dashed var(--link-hover-color);
-  outline-offset: 4px;
-}
-
 button {
   background-color: var(--link-color);
   color: #fff;
   border: none;
   border-radius: 8px;
-  padding: 12px 24px; /* Larger padding for better usability */
+  padding: 12px 24px;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
@@ -99,17 +88,17 @@ button:hover {
 }
 
 .introduction, .section {
-  padding: 50px; /* Increased padding for better spacing */
+  padding: 50px;
   text-align: center;
   background: var(--card-background);
   border-radius: 12px;
   box-shadow: 0 4px 8px var(--card-shadow);
-  margin: 30px auto; /* Center sections with consistent spacing */
-  max-width: 900px; /* Limit width for better readability */
+  margin: 30px auto;
+  max-width: 900px;
 }
 
 .introduction img, .profile-pic {
-  max-width: 150px; /* Slightly larger for better visibility */
+  max-width: 150px;
   border-radius: 50%;
   border: 3px solid var(--border-color);
   margin-bottom: 20px;
@@ -126,7 +115,7 @@ button:hover {
 
 .timeline {
   width: 100%;
-  background: var(--timeline-background);
+  background: var(--card-background);
   padding: 15px 0;
   display: flex;
   justify-content: center;
@@ -151,7 +140,7 @@ button:hover {
 }
 
 .timeline ul li a {
-  color: var(--timeline-text);
+  color: var(--text-color);
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease-in-out;
@@ -160,28 +149,13 @@ button:hover {
 
 .timeline ul li a:hover, .timeline ul li a.active {
   color: var(--link-hover-color);
-  border-bottom: 2px solid var(--link-hover-color);
-}
-
-.timeline ul li a:focus {
-  outline: 2px dashed var(--link-hover-color);
-  outline-offset: 4px;
-}
-
-#theme-toggle {
-  margin-right: 8px;
-}
-
-#theme-label {
-  font-size: 0.9rem;
-  color: var(--timeline-text);
 }
 
 .projects-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px; /* Increased gap for better spacing */
+  gap: 40px;
 }
 
 .project-card {
@@ -191,7 +165,6 @@ button:hover {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   overflow: hidden;
   margin-bottom: 20px;
-  width: 100%;
   max-width: 350px;
   flex: 1 1 calc(50% - 40px);
 }
@@ -210,16 +183,11 @@ button:hover {
   padding: 20px;
 }
 
-.project-link {
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .skills {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px; /* Increased gap for better spacing */
+  gap: 40px;
 }
 
 .skill {
@@ -261,7 +229,7 @@ button:hover {
 footer {
   text-align: center;
   color: var(--text-color);
-  margin-top: 40px; /* Increased spacing above footer */
+  margin-top: 40px;
   padding: 20px;
   background: var(--card-background);
   box-shadow: 0 -4px 8px var(--card-shadow);
@@ -272,12 +240,11 @@ footer {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
-  line-height: 1.8;
 }
 
 .education-item {
   margin-bottom: 30px;
-  padding: 20px; /* Increased padding for better spacing */
+  padding: 20px;
   background: var(--card-background);
   border-radius: 8px;
   box-shadow: 0 2px 4px var(--card-shadow);
@@ -315,10 +282,6 @@ footer {
     width: 100%;
   }
 
-  .timeline ul li {
-    margin: 0;
-  }
-
   main {
     margin-top: 60px;
   }
@@ -337,10 +300,6 @@ footer {
 
   .timeline ul li {
     margin: 10px 0;
-  }
-
-  .timeline .logo {
-    margin-top: 20px;
   }
 }
 
