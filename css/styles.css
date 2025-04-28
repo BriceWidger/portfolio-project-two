@@ -33,7 +33,9 @@ body.dark-mode {
   --progress-bar: #66b2ff;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "Montserrat", sans-serif;
   color: var(--text-color);
   text-transform: uppercase;
@@ -88,7 +90,8 @@ button:hover {
   transform: scale(1.05);
 }
 
-.introduction, .section {
+.introduction,
+.section {
   padding: 40px;
   text-align: center;
   background: var(--card-background);
@@ -98,8 +101,9 @@ button:hover {
   max-width: 850px;
 }
 
-.introduction img, .profile-pic {
-  max-width: 140px;
+.introduction img,
+.profile-pic {
+  max-width: 200px;
   border-radius: 50%;
   border: 2px solid var(--border-color);
   margin-bottom: 18px;
@@ -137,7 +141,7 @@ button:hover {
 }
 
 .timeline ul li {
-  margin: 0 12px;
+  margin: 0 16px;
 }
 
 .timeline ul li a {
@@ -148,7 +152,8 @@ button:hover {
   padding: 8px 0;
 }
 
-.timeline ul li a:hover, .timeline ul li a.active {
+.timeline ul li a:hover,
+.timeline ul li a.active {
   color: var(--link-hover-color);
 }
 
@@ -168,6 +173,8 @@ button:hover {
   margin-bottom: 18px;
   max-width: 340px;
   flex: 1 1 calc(50% - 35px);
+  padding: 16px;
+  margin: 20px;
 }
 
 .project-card:hover {
@@ -268,6 +275,33 @@ footer {
   color: var(--link-hover-color);
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+form textarea {
+  width: 100%;
+  max-width: 600px; /* Increased width for the message form */
+}
+
+form button {
+  align-self: center;
+  width: 50%;
+}
+
 @media (max-width: 1024px) {
   .timeline {
     height: auto;
@@ -305,20 +339,24 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .introduction img, .profile-pic {
-    max-width: 75px;
+  h1 {
+    font-size: 1.8rem;
   }
 
-  .skill {
-    width: 75px;
+  h2 {
+    font-size: 1.5rem;
   }
 
-  .projects-container {
-    flex-direction: column;
-    align-items: center;
+  p {
+    font-size: 0.9rem;
   }
 
   .project-card {
+    margin: 15px;
+  }
+
+  form {
     max-width: 100%;
+    padding: 0 10px;
   }
 }

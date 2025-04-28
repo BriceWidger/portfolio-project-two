@@ -1,0 +1,9 @@
+4/28/25:
+
+1. Change profile picture of myself
+
+2. The scroll down needs to display the other parts of page before you stop scrolling (they currently only show if i stop scrolling)
+
+3. Research what i should put on porfolio page and add new elements
+
+4. Write the about me, education, and describe projects

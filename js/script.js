@@ -55,4 +55,21 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   window.addEventListener("scroll", debounce(handleScroll));
+
+  // Typewriter effect for introduction text
+  const typewriterText = document.getElementById("typewriter");
+  const text =
+    "Hello! I'm Brice Widger, a passionate developer with a love for creating innovative solutions.";
+  let index = 0;
+
+  function typeWriter() {
+    if (index < text.length) {
+      typewriterText.textContent += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 100);
+    }
+  }
+
+  typewriterText.textContent = ""; // Clear initial text
+  typeWriter();
 });
