@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const progressBars = document.querySelectorAll(".progress-bar");
   const themeToggle = document.getElementById("theme-toggle");
   const themeLabel = document.getElementById("theme-label");
+  const scrollIndicator = document.querySelector(".scroll-indicator");
 
   sections.forEach((section) => {
     if (section.id !== "introduction") section.classList.add("hidden");
@@ -22,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
 
-      // Ensure sections become visible as they enter the viewport
       if (
         section.id !== "introduction" &&
         window.scrollY + window.innerHeight >= sectionTop + sectionHeight / 4
@@ -47,12 +47,17 @@ document.addEventListener("DOMContentLoaded", () => {
         bar.style.width = bar.getAttribute("data-progress") + "%";
       }
     });
+
+    // Fade out the scroll indicator as the user scrolls down
+    if (window.scrollY > 50) {
+      scrollIndicator.classList.add("hidden");
+    } else {
+      scrollIndicator.classList.remove("hidden");
+    }
   };
 
-  // Attach the updated scroll handler
   window.addEventListener("scroll", handleScroll);
 
-  // Static text for introduction
   const typewriterText = document.getElementById("typewriter");
   const text =
     "Hello! I'm Brice Widger, a passionate developer with a love for creating innovative solutions.";

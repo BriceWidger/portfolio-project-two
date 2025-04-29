@@ -124,6 +124,16 @@ button:hover {
   align-items: center;
   justify-content: center;
   gap: 20px; /* Even spacing between child elements */
+  transition: transform var(--transition-duration) ease-in-out,
+    box-shadow var(--transition-duration) ease-in-out,
+    border-color var(--transition-duration) ease-in-out;
+  will-change: transform; /* Optimize for transform changes */
+}
+
+.content-container:hover {
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  border: 2px solid var(--accent-color); /* Add border effect matching accent color */
 }
 
 .introduction img,
@@ -348,20 +358,26 @@ form textarea:focus {
 }
 
 .scroll-indicator {
-  display: inline-block;
+  position: absolute; /* Position relative to the section */
+  bottom: 20px; /* Place it at the bottom of the section */
+  left: 50%;
+  transform: translateX(-50%);
   text-decoration: none;
   color: rgba(255, 255, 255, 0.9); /* Match arrow color */
   font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
-  position: absolute; /* Position it at the bottom of the content */
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
   padding: 10px 20px;
   border-radius: 10px; /* Rounded corners for the outline */
   background: transparent; /* Transparent background */
   animation: bounce 2s infinite;
+  opacity: 1; /* Fully visible by default */
+  transition: opacity 0.3s ease-in-out; /* Smooth fade-out transition */
+}
+
+.scroll-indicator.hidden {
+  opacity: 0; /* Fully hidden when scrolled */
+  pointer-events: none; /* Disable interactions when hidden */
 }
 
 .scroll-indicator span {
