@@ -2,7 +2,7 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: "Roboto", sans-serif;
-  line-height: 1.8;
+  line-height: 1.7; /* Adjusted for better readability */
   margin: 0;
   padding: 0;
   background-image: url("/images/city-architecture-landscape-digital-art.jpg");
@@ -27,6 +27,7 @@ body {
   --accent-color: #ff6f61; /* Accent color for highlights */
   --button-hover-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for button hover */
   --section-spacing: 50px; /* Consistent spacing between sections */
+  --transition-duration: 0.3s; /* Consistent transition duration */
 }
 
 body {
@@ -41,34 +42,39 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 1.2px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow for better readability */
+  margin-top: 0; /* Ensure no extra spacing above headings */
 }
 
 h1 {
   font-size: 2.8rem;
   margin-bottom: 20px;
+  font-weight: 700; /* Ensure boldness for emphasis */
 }
 
 h2 {
   font-size: 2.2rem;
   margin-bottom: 18px;
+  font-weight: 600; /* Slightly lighter than h1 */
 }
 
 h3 {
   font-size: 1.6rem;
   margin-bottom: 12px;
+  font-weight: 500; /* Consistent hierarchy */
 }
 
 p {
   font-size: 1.1rem;
   line-height: 1.9;
   margin-bottom: 20px;
+  margin-top: 0; /* Remove unnecessary top margin */
 }
 
 a {
   color: var(--link-color);
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease-in-out;
+  transition: color var(--transition-duration) ease-in-out; /* Consistent transition */
 }
 
 a:hover {
@@ -84,19 +90,20 @@ button {
   padding: 12px 24px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  transition: background-color var(--transition-duration) ease-in-out,
+    transform var(--transition-duration) ease-in-out,
+    box-shadow var(--transition-duration) ease-in-out;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
 }
 
 button:hover {
   background-color: darken(var(--accent-color), 10%);
-  transform: scale(1.05);
-  box-shadow: var(--button-hover-shadow); /* Enhance hover effect */
+  transform: translateY(-2px); /* Subtle lift effect */
 }
 
 .introduction,
 .section {
-  padding: 40px;
+  padding: 50px 30px; /* Adjusted for better spacing */
   text-align: center;
   background: var(--card-background);
   border-radius: 10px;
@@ -106,7 +113,7 @@ button:hover {
 
 .content-container {
   background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
-  padding: 40px;
+  padding: 50px; /* Increased padding for better spacing */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
   text-align: center;
@@ -168,11 +175,12 @@ button:hover {
   color: var(--text-color);
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease-in-out;
+  transition: color var(--transition-duration) ease-in-out; /* Consistent transition */
   padding: 10px 15px;
   border-radius: 6px;
   font-size: 1.1rem;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color var(--transition-duration) ease-in-out,
+    box-shadow var(--transition-duration) ease-in-out;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for navigation links */
 }
 
@@ -181,6 +189,7 @@ button:hover {
   background-color: var(--accent-color);
   color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance hover and active effects */
+  transform: scale(1.05); /* Subtle zoom effect */
 }
 
 .skills {
@@ -198,6 +207,7 @@ button:hover {
 .skill h3 {
   margin-bottom: 8px;
   font-size: 0.95rem;
+  font-weight: 600; /* Ensure consistency with other headings */
 }
 
 .skill .progress {
@@ -212,7 +222,8 @@ button:hover {
   height: 8px;
   background: var(--progress-bar);
   width: 0;
-  transition: width 1s ease-in-out;
+  transition: width var(--transition-duration) ease-in-out,
+    box-shadow var(--transition-duration) ease-in-out;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Add depth to progress bars */
 }
 
@@ -231,7 +242,7 @@ footer {
   text-align: center;
   color: var(--text-color);
   margin-top: 35px;
-  padding: 18px;
+  padding: 25px; /* Adjusted for better spacing */
   background: var(--card-background);
   box-shadow: 0 -4px 8px var(--card-shadow);
   font-size: 0.9rem;
@@ -289,13 +300,15 @@ form textarea {
   border: 1px solid var(--border-color);
   border-radius: 6px;
   font-size: 1rem;
-  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: border-color var(--transition-duration) ease-in-out,
+    box-shadow var(--transition-duration) ease-in-out;
 }
 
 form input:focus,
 form textarea:focus {
   border-color: var(--link-color); /* Highlight input fields on focus */
   box-shadow: 0 0 8px rgba(0, 119, 204, 0.3); /* Add glow effect on focus */
+  outline: none; /* Remove default outline for cleaner look */
 }
 
 .projects-container {
@@ -309,8 +322,9 @@ form textarea:focus {
   background: var(--card-background);
   border-radius: 10px;
   box-shadow: 0 4px 8px var(--card-shadow);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
-    background-color 0.3s ease-in-out;
+  transition: transform var(--transition-duration) ease-in-out,
+    box-shadow var(--transition-duration) ease-in-out,
+    background-color var(--transition-duration) ease-in-out;
   overflow: hidden;
   margin-bottom: 20px;
   max-width: 340px;
@@ -331,6 +345,65 @@ form textarea:focus {
 .project-card-content {
   padding: 15px;
   text-align: center;
+}
+
+.scroll-indicator {
+  display: inline-block;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9); /* Match arrow color */
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute; /* Position it at the bottom of the content */
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 10px; /* Rounded corners for the outline */
+  background: transparent; /* Transparent background */
+  animation: bounce 2s infinite;
+}
+
+.scroll-indicator span {
+  display: block;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.9); /* Match arrow color */
+}
+
+.scroll-arrow {
+  width: 20px;
+  height: 20px;
+  border-right: 2px solid rgba(255, 255, 255, 0.9); /* Adjusted to create a downward arrow */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.9); /* Adjusted to create a downward arrow */
+  transform: rotate(45deg); /* Ensure the arrow points downward */
+  margin: 0 auto;
+  animation: arrow-bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+@keyframes arrow-bounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(45deg);
+  }
+  50% {
+    transform: translateY(5px) rotate(45deg);
+  }
 }
 
 @media (max-width: 1024px) {
@@ -371,7 +444,7 @@ form textarea:focus {
   }
 
   .content-container {
-    padding: 30px; /* Adjust padding for smaller screens */
+    padding: 40px; /* Adjust padding for smaller screens */
   }
 }
 
@@ -385,7 +458,7 @@ form textarea:focus {
   }
 
   p {
-    font-size: 0.9rem;
+    font-size: 0.95rem; /* Slightly larger for readability */
   }
 
   .timeline ul li a {
