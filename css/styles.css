@@ -1,36 +1,36 @@
 body {
-  font-family: "Roboto", sans-serif;
-  margin: 0;
-  padding: 0;
   background-color: var(--background-color);
   color: var(--text-color);
-  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  background-image: url("/images/city-architecture-landscape-digital-art.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   cursor: url("images/custom-cursor.png"), auto;
   scroll-behavior: smooth;
 }
 
 :root {
-  --background-color: #f8f9fa;
-  --text-color: #2b2b2b;
+  --background-color: #f4f4f9;
+  --text-color: #333333;
   --link-color: #0077cc;
   --link-hover-color: #005fa3;
   --card-background: #ffffff;
   --card-shadow: rgba(0, 0, 0, 0.1);
-  --border-color: #dcdcdc;
-  --progress-background: #e0e0e0;
+  --border-color: #e0e0e0;
+  --progress-background: #e6e6e6;
   --progress-bar: #0077cc;
+  --accent-color: #ff6f61; /* Accent color for highlights */
+  --button-hover-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for button hover */
+  --section-spacing: 50px; /* Consistent spacing between sections */
 }
 
-body.dark-mode {
-  --background-color: #121212;
-  --text-color: #e0e0e0;
-  --link-color: #66b2ff;
-  --link-hover-color: #3399ff;
-  --card-background: #1e1e1e;
-  --card-shadow: rgba(0, 0, 0, 0.5);
-  --border-color: #444;
-  --progress-background: #3a3a3a;
-  --progress-bar: #66b2ff;
+body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 h1,
@@ -39,55 +39,59 @@ h3 {
   font-family: "Montserrat", sans-serif;
   color: var(--text-color);
   text-transform: uppercase;
-  letter-spacing: 1.1px;
+  letter-spacing: 1.2px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow for better readability */
 }
 
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 18px;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
 }
 
 h2 {
-  font-size: 2rem;
-  margin-bottom: 14px;
+  font-size: 2.2rem;
+  margin-bottom: 18px;
 }
 
 h3 {
-  font-size: 1.5rem;
-  margin-bottom: 8px;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
 }
 
 p {
-  font-size: 1rem;
-  line-height: 1.8;
-  margin: 0 0 18px;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin-bottom: 20px;
 }
 
 a {
   color: var(--link-color);
   text-decoration: none;
+  font-weight: bold;
   transition: color 0.3s ease-in-out;
 }
 
 a:hover {
-  text-decoration: underline;
   color: var(--link-hover-color);
+  text-decoration: underline;
 }
 
 button {
-  background-color: var(--link-color);
+  background-color: var(--accent-color);
   color: #fff;
   border: none;
-  border-radius: 6px;
-  padding: 10px 20px;
-  font-size: 0.95rem;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
 }
 
 button:hover {
-  background-color: var(--link-hover-color);
+  background-color: darken(var(--accent-color), 10%);
   transform: scale(1.05);
+  box-shadow: var(--button-hover-shadow); /* Enhance hover effect */
 }
 
 .introduction,
@@ -96,9 +100,23 @@ button:hover {
   text-align: center;
   background: var(--card-background);
   border-radius: 10px;
-  box-shadow: 0 3px 6px var(--card-shadow);
-  margin: 25px auto;
-  max-width: 850px;
+  box-shadow: 0 4px 8px var(--card-shadow);
+  margin: var(--section-spacing) auto; /* Consistent spacing between sections */
+}
+
+.content-container {
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  text-align: center;
+  max-width: 800px; /* Increased width for larger sections */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Even spacing between child elements */
 }
 
 .introduction img,
@@ -106,7 +124,7 @@ button:hover {
   max-width: 200px;
   border-radius: 50%;
   border: 2px solid var(--border-color);
-  margin-bottom: 18px;
+  margin-bottom: 20px; /* Ensure consistent spacing */
 }
 
 .full-page {
@@ -129,7 +147,7 @@ button:hover {
   top: 0;
   left: 0;
   z-index: 1000;
-  box-shadow: 0 3px 6px var(--card-shadow);
+  box-shadow: 0 4px 8px var(--card-shadow);
 }
 
 .timeline ul {
@@ -138,6 +156,8 @@ button:hover {
   margin: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 20px; /* Even spacing between navigation links */
 }
 
 .timeline ul li {
@@ -149,57 +169,29 @@ button:hover {
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease-in-out;
-  padding: 8px 0;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for navigation links */
 }
 
 .timeline ul li a:hover,
 .timeline ul li a.active {
-  color: var(--link-hover-color);
-}
-
-.projects-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 35px;
-}
-
-.project-card {
-  background: var(--card-background);
-  border-radius: 10px;
-  box-shadow: 0 3px 6px var(--card-shadow);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  overflow: hidden;
-  margin-bottom: 18px;
-  max-width: 340px;
-  flex: 1 1 calc(50% - 35px);
-  padding: 16px;
-  margin: 20px;
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 12px var(--card-shadow);
-}
-
-.project-card img {
-  width: 100%;
-  height: auto;
-}
-
-.project-card-content {
-  padding: 18px;
+  background-color: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance hover and active effects */
 }
 
 .skills {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 35px;
+  gap: 40px; /* Even spacing between skill items */
 }
 
 .skill {
-  width: 110px;
+  width: 120px;
   text-align: center;
 }
 
@@ -221,6 +213,7 @@ button:hover {
   background: var(--progress-bar);
   width: 0;
   transition: width 1s ease-in-out;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Add depth to progress bars */
 }
 
 .hidden {
@@ -240,8 +233,9 @@ footer {
   margin-top: 35px;
   padding: 18px;
   background: var(--card-background);
-  box-shadow: 0 -3px 6px var(--card-shadow);
-  font-size: 0.85rem;
+  box-shadow: 0 -4px 8px var(--card-shadow);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-color); /* Add a subtle border for separation */
 }
 
 .container {
@@ -252,10 +246,14 @@ footer {
 
 .education-item {
   margin-bottom: 25px;
-  padding: 18px;
+  padding: 20px;
   background: var(--card-background);
   border-radius: 6px;
   box-shadow: 0 2px 4px var(--card-shadow);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Even spacing between child elements */
 }
 
 .education-item h3 {
@@ -278,28 +276,61 @@ footer {
 form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px; /* Even spacing between form elements */
   max-width: 400px;
   margin: 0 auto;
+  align-items: center;
 }
 
 form input,
 form textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid var(--border-color);
   border-radius: 6px;
   font-size: 1rem;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-form textarea {
+form input:focus,
+form textarea:focus {
+  border-color: var(--link-color); /* Highlight input fields on focus */
+  box-shadow: 0 0 8px rgba(0, 119, 204, 0.3); /* Add glow effect on focus */
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px; /* Even spacing between project cards */
+}
+
+.project-card {
+  background: var(--card-background);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--card-shadow);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+  overflow: hidden;
+  margin-bottom: 20px;
+  max-width: 340px;
+  flex: 1 1 calc(50% - 40px);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* Even spacing between child elements */
+}
+
+.project-card img {
   width: 100%;
-  max-width: 600px; /* Increased width for the message form */
+  height: auto;
+  border-radius: 8px;
 }
 
-form button {
-  align-self: center;
-  width: 50%;
+.project-card-content {
+  padding: 15px;
+  text-align: center;
 }
 
 @media (max-width: 1024px) {
@@ -323,40 +354,41 @@ form button {
 }
 
 @media (max-width: 768px) {
-  .timeline {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .timeline ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .timeline ul li {
-    margin: 8px 0;
-  }
-}
-
-@media (max-width: 480px) {
   h1 {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   p {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .project-card {
     margin: 15px;
   }
 
-  form {
-    max-width: 100%;
-    padding: 0 10px;
+  .content-container {
+    padding: 30px; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .timeline ul li a {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
   }
 }
