@@ -15,23 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
     themeLabel.textContent = isDarkMode ? "Dark Mode" : "Light Mode";
   });
 
-  const debounce = (func, wait = 20) => {
-    let timeout;
-    return (...args) => {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => func.apply(this, args), wait);
-    };
-  };
-
   const handleScroll = () => {
     let current = "";
 
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
 
+      // Ensure sections become visible as they enter the viewport
       if (
         section.id !== "introduction" &&
-        window.scrollY >= sectionTop - window.innerHeight / 1.3
+        window.scrollY + window.innerHeight >= sectionTop + sectionHeight / 4
       ) {
         section.classList.add("visible");
       }
@@ -43,8 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navLinks.forEach((link) => {
       link.classList.remove("active");
-      if (link.getAttribute("href").includes(current))
+      if (link.getAttribute("href").includes(current)) {
         link.classList.add("active");
+      }
     });
 
     progressBars.forEach((bar) => {
@@ -54,22 +49,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  window.addEventListener("scroll", debounce(handleScroll));
+  // Attach the updated scroll handler
+  window.addEventListener("scroll", handleScroll);
 
-  // Typewriter effect for introduction text
+  // Static text for introduction
   const typewriterText = document.getElementById("typewriter");
   const text =
     "Hello! I'm Brice Widger, a passionate developer with a love for creating innovative solutions.";
-  let index = 0;
 
-  function typeWriter() {
-    if (index < text.length) {
-      typewriterText.textContent += text.charAt(index);
-      index++;
-      setTimeout(typeWriter, 100);
-    }
-  }
-
-  typewriterText.textContent = ""; // Clear initial text
-  typeWriter();
+  typewriterText.textContent = text;
 });
