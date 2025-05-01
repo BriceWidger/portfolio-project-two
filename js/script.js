@@ -57,10 +57,4 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   window.addEventListener("scroll", handleScroll);
-
-  const typewriterText = document.getElementById("typewriter");
-  const text =
-    "Hello! I'm Brice Widger, a passionate developer with a love for creating innovative solutions.";
-
-  typewriterText.textContent = text;
 });
