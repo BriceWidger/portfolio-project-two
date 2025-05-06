@@ -57,4 +57,26 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   window.addEventListener("scroll", handleScroll);
+
+  // Add back-to-top button functionality
+  const backToTopButton = document.createElement("button");
+  backToTopButton.classList.add("back-to-top");
+  backToTopButton.innerHTML = "&#8679;"; // Up arrow symbol
+
+  document.body.appendChild(backToTopButton);
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopButton.classList.add("visible");
+    } else {
+      backToTopButton.classList.remove("visible");
+    }
+  });
+
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Ensure the back-to-top button remains functional
+  // No changes needed here as the functionality is already implemented.
 });
