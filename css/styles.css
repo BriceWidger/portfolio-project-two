@@ -34,6 +34,7 @@ body {
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Typography Improvements */
 h1,
 h2,
 h3 {
@@ -41,31 +42,31 @@ h3 {
   color: var(--text-color);
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow for better readability */
-  margin-top: 0; /* Ensure no extra spacing above headings */
+  margin-top: 0;
 }
 
 h1 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   margin-bottom: 20px;
-  font-weight: 700; /* Ensure boldness for emphasis */
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow for better contrast */
 }
 
 h2 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   margin-bottom: 18px;
-  font-weight: 600; /* Slightly lighter than h1 */
+  font-weight: 600;
 }
 
 h3 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin-bottom: 12px;
-  font-weight: 500; /* Consistent hierarchy */
+  font-weight: 500;
 }
 
 p {
-  font-size: 1.1rem;
-  line-height: 1.9;
+  font-size: 1.2rem;
+  line-height: 1.8;
   margin-bottom: 20px;
   margin-top: 0; /* Remove unnecessary top margin */
 }
@@ -82,6 +83,7 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Button Styling */
 button {
   background-color: var(--accent-color);
   color: #fff;
@@ -101,6 +103,31 @@ button:hover {
   transform: translateY(-2px); /* Subtle lift effect */
 }
 
+.btn {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: darken(var(--accent-color), 10%);
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  background-color: var(--link-color);
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: var(--link-hover-color);
+}
+
 .introduction,
 .section {
   padding: 50px 30px; /* Adjusted for better spacing */
@@ -111,11 +138,22 @@ button:hover {
   margin: var(--section-spacing) auto; /* Consistent spacing between sections */
 }
 
+/* Section Spacing */
+.full-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+  text-align: center;
+}
+
 .content-container {
   background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
-  padding: 50px; /* Increased padding for better spacing */
+  padding: 30px; /* Adjusted padding for better spacing */
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   text-align: center;
   max-width: 800px; /* Increased width for larger sections */
   margin: 0 auto;
@@ -142,15 +180,6 @@ button:hover {
   border-radius: 50%;
   border: 2px solid var(--border-color);
   margin-bottom: 20px; /* Ensure consistent spacing */
-}
-
-.full-page {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 15px;
 }
 
 .timeline {
@@ -363,6 +392,7 @@ form textarea:focus {
   text-align: center;
 }
 
+/* Scroll Indicator */
 .scroll-indicator {
   position: absolute; /* Position relative to the section */
   bottom: 20px; /* Place it at the bottom of the section */
@@ -395,9 +425,9 @@ form textarea:focus {
 .scroll-arrow {
   width: 20px;
   height: 20px;
-  border-right: 2px solid rgba(255, 255, 255, 0.9); /* Adjusted to create a downward arrow */
-  border-bottom: 2px solid rgba(255, 255, 255, 0.9); /* Adjusted to create a downward arrow */
-  transform: rotate(45deg); /* Ensure the arrow points downward */
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
   margin: 0 auto;
   animation: arrow-bounce 1.5s infinite;
 }
