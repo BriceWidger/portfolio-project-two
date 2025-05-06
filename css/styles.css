@@ -153,21 +153,22 @@ button:hover {
   align-items: center;
   padding: 100px 20px;
   text-align: center;
+  gap: 50px; /* Maintain consistent spacing between sections */
 }
 
 .content-container {
-  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
-  padding: 30px; /* Adjusted padding for better spacing */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  text-align: center;
-  max-width: 800px; /* Increased width for larger sections */
+  max-width: 800px;
   margin: 0 auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px; /* Even spacing between child elements */
+  gap: 20px; /* Ensure even spacing between child elements */
   transition: transform var(--transition-duration) ease-in-out,
     box-shadow var(--transition-duration) ease-in-out,
     border-color var(--transition-duration) ease-in-out;
@@ -489,6 +490,14 @@ form textarea:focus {
   main {
     margin-top: 50px;
   }
+
+  .content-container {
+    padding: 20px; /* Adjust padding for medium screens */
+  }
+
+  .project-card {
+    flex: 1 1 calc(50% - 20px); /* Adjust project card width */
+  }
 }
 
 @media (max-width: 768px) {
@@ -504,12 +513,28 @@ form textarea:focus {
     font-size: 1rem;
   }
 
-  .project-card {
-    margin: 15px;
+  .content-container {
+    padding: 20px; /* Adjust padding for smaller screens */
   }
 
-  .content-container {
-    padding: 40px; /* Adjust padding for smaller screens */
+  .full-page {
+    padding: 80px 15px; /* Adjust section padding for smaller screens */
+    gap: 40px; /* Adjust spacing between sections */
+  }
+
+  .project-card {
+    margin: 15px;
+    flex: 1 1 calc(100% - 30px); /* Full width for smaller screens */
+  }
+
+  .skills {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill {
+    width: 100%;
+    max-width: 300px; /* Limit skill width */
   }
 }
 
@@ -528,5 +553,22 @@ form textarea:focus {
 
   .timeline ul li a {
     font-size: 0.9rem; /* Adjust font size for smaller screens */
+  }
+
+  .content-container {
+    padding: 15px; /* Further reduce padding for very small screens */
+  }
+
+  .full-page {
+    padding: 60px 10px; /* Further adjust section padding */
+    gap: 30px; /* Reduce spacing between sections */
+  }
+
+  .project-card {
+    margin: 10px;
+  }
+
+  .scroll-indicator {
+    font-size: 0.8rem; /* Adjust scroll indicator size */
   }
 }
