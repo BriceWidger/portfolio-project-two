@@ -111,11 +111,14 @@ button:hover {
   padding: 12px 24px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
 }
 
 .btn:hover {
-  background-color: darken(var(--accent-color), 10%);
+  background-color: transparent;
+  color: var(
+    --link-color
+  ); /* Change text color to default link color on hover */
   transform: translateY(-3px);
 }
 
@@ -125,7 +128,10 @@ button:hover {
 }
 
 .btn-secondary:hover {
-  background-color: var(--link-hover-color);
+  background-color: transparent;
+  color: var(
+    --link-color
+  ); /* Change text color to default link color on hover */
 }
 
 .introduction,
@@ -390,6 +396,13 @@ form textarea:focus {
 .project-card-content {
   padding: 15px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Add spacing between elements */
+}
+
+.project-tech {
+  margin-bottom: 15px; /* Add margin to separate from buttons */
 }
 
 /* Scroll Indicator */
