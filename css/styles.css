@@ -155,7 +155,8 @@ button:hover {
 
 /* Section Spacing */
 .full-page {
-  height: 100vh;
+  min-height: 100vh; /* Ensure each section takes up at least the full viewport height */
+  height: auto; /* Allow sections to grow based on content */
   display: flex;
   flex-direction: column;
   justify-content: center;
