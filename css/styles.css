@@ -1,34 +1,26 @@
-html {
-  height: 100%;
-}
-
 html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  min-height: 100%; /* Allow content to grow beyond viewport height */
+  height: auto; /* Ensure height adjusts to content */
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-/* Move the background image back to the body and ensure it always fits the screen */
 body {
-  background-image: url("../images/city-architecture-landscape-digital-art.jpg");
-  background-size: cover; /* Ensures the image covers the entire screen */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  background-attachment: fixed; /* Keeps the background fixed while scrolling */
-  height: 100vh; /* Ensures the body height matches the viewport height */
-  margin: 0; /* Removes default margin */
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: "Roboto", sans-serif;
   font-size: 16px; /* Set a base font size for consistency */
   line-height: 1.6; /* Adjusted for better readability */
+  margin: 0;
   padding: 0;
+  background-image: url("/images/city-architecture-landscape-digital-art.jpg");
+  background-size: cover; /* Ensure the background image covers the entire viewport */
+  background-position: center; /* Center the background image */
+  background-attachment: fixed; /* Keep the background fixed during scrolling */
+  background-repeat: no-repeat;
   cursor: url("images/custom-cursor.png"), auto;
   scroll-behavior: smooth;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 :root {
