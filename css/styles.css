@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove default padding */
   min-height: 100%; /* Allow content to grow beyond viewport height */
@@ -90,6 +91,10 @@ a {
 a:hover {
   color: var(--link-hover-color);
   text-decoration: underline;
+}
+
+a.active {
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 /* Button Styling */
@@ -651,6 +656,28 @@ form textarea:focus {
   .skill {
     width: 100%;
     max-width: 300px; /* Limit skill width */
+  }
+
+  .timeline ul {
+    flex-wrap: wrap; /* Allow navigation items to wrap */
+    justify-content: center; /* Center align items */
+  }
+
+  .timeline ul li {
+    flex: 1 1 auto; /* Allow items to grow and shrink */
+    text-align: center; /* Center align text */
+  }
+
+  .timeline ul li a {
+    white-space: nowrap; /* Prevent text wrapping */
+    display: inline-block; /* Ensure the text stays inline */
+    overflow: hidden; /* Prevent overflow */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    padding: 8px 10px; /* Adjust padding for better spacing */
+  }
+
+  .timeline {
+    padding: 10px 0; /* Adjust padding for smaller screens */
   }
 }
 
