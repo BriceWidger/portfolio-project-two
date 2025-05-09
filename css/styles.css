@@ -158,6 +158,15 @@ button:hover {
   margin: var(--section-spacing) auto; /* Consistent spacing between sections */
 }
 
+/* Adjust spacing for hero buttons in the introduction section */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Add spacing between buttons */
+  margin-top: 20px; /* Add margin to separate buttons from other elements */
+}
+
 /* Section Spacing */
 .full-page {
   min-height: 100vh; /* Ensure each section takes up at least the full viewport height */
@@ -264,6 +273,31 @@ section.visible {
   flex: 1 1 calc(50% - 40px); /* Two cards per row with spacing */
   max-width: 400px;
   box-sizing: border-box;
+}
+
+/* Ensure project tech text is aligned horizontally */
+.project-tech {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Add spacing between tech items */
+  align-items: center; /* Align items on the same x-axis */
+}
+
+/* Ensure project action buttons are aligned horizontally */
+.project-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Add spacing between buttons */
+  align-items: center; /* Align buttons on the same x-axis */
+}
+
+/* Adjust spacing for project action buttons in the projects section */
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px; /* Add spacing between buttons */
+  margin-top: 10px; /* Add margin to separate buttons from other elements */
 }
 
 /* Add hover effect for project cards */
@@ -457,7 +491,8 @@ form textarea:focus {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px; /* Even spacing between project cards */
+  gap: 20px; /* Even spacing between project cards */
+  align-items: stretch; /* Stretch all cards to the same height */
 }
 
 .project-card {
@@ -474,8 +509,10 @@ form textarea:focus {
   padding: 20px; /* Consistent padding */
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   gap: 15px; /* Even spacing between child elements */
+  height: 100%; /* Ensure consistent height for all cards */
 }
 
 .project-card img {
