@@ -2,18 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".timeline ul li a");
   const progressBars = document.querySelectorAll(".progress-bar");
-  const themeToggle = document.getElementById("theme-toggle");
-  const themeLabel = document.getElementById("theme-label");
   const scrollIndicator = document.querySelector(".scroll-indicator");
 
   sections.forEach((section) => {
     if (section.id !== "introduction") section.classList.add("hidden");
-  });
-
-  themeToggle.addEventListener("change", () => {
-    const isDarkMode = themeToggle.checked;
-    document.body.classList.toggle("dark-mode", isDarkMode);
-    themeLabel.textContent = isDarkMode ? "Dark Mode" : "Light Mode";
   });
 
   const handleScroll = () => {
