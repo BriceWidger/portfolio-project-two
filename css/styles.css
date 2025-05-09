@@ -510,7 +510,8 @@ form textarea:focus {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch; /* Stretch content to align */
+
   gap: 15px; /* Even spacing between child elements */
 }
 
@@ -527,10 +528,12 @@ form textarea:focus {
 }
 
 .project-card-content {
-  padding: 15px;
+  padding: 15px 0; /* Set padding to 15px for top and bottom only */
   text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Ensure consistent height for content */
   gap: 20px; /* Add spacing between elements */
 }
 
