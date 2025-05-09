@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("Portfolio script loaded successfully.");
+  // Added a console log for debugging and confirmation
+
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".timeline ul li a");
   const progressBars = document.querySelectorAll(".progress-bar");
@@ -48,5 +51,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  window.addEventListener("scroll", handleScroll);
+  // Ensure scroll indicator is hidden when sections are fully visible
+  const checkScrollIndicator = () => {
+    const allVisible = Array.from(sections).every((section) =>
+      section.classList.contains("visible")
+    );
+    if (allVisible) {
+      scrollIndicator.classList.add("hidden");
+    }
+  };
+
+  // Add functionality for back-to-top button
+  const backToTopButton = document.createElement('button');
+  backToTopButton.classList.add('back-to-top');
+  backToTopButton.innerHTML = '↑';
+  document.body.appendChild(backToTopButton);
+
+  window.addEventListener('scroll', () => {
+    handleScroll();
+    checkScrollIndicator();
+
+    if (window.scrollY > 300) {
+      backToTopButton.classList.add('visible');
+    } else {
+      backToTopButton.classList.remove('visible');
+    }
+  });
+
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 });

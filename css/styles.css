@@ -14,7 +14,7 @@ body {
   font-size: 16px; /* Set a base font size for consistency */
   line-height: 1.6; /* Adjusted for better readability */
   margin: 0;
-  padding: 0;
+  padding: 0; /* Removed unnecessary padding */
   background-image: url("/images/city-architecture-landscape-digital-art.jpg");
   background-size: cover; /* Ensure the background image covers the entire viewport */
   background-position: center; /* Center the background image */
@@ -110,11 +110,21 @@ button {
     transform var(--transition-duration) ease-in-out,
     box-shadow var(--transition-duration) ease-in-out;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Improved button hover effect for better user experience */
 button:hover {
-  background-color: darken(var(--accent-color), 10%);
-  transform: translateY(-2px); /* Subtle lift effect */
+  background-color: #e55b50; /* Slightly lighter shade for hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+  transform: scale(1.05);
+}
+
+/* Add subtle animations for buttons */
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn {
@@ -175,7 +185,7 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 80px 20px; /* Adjusted for better spacing */
+  padding: 60px 20px; /* Adjusted padding for better spacing */
   text-align: center;
   gap: 40px; /* Maintain consistent spacing between sections */
 }
@@ -212,9 +222,15 @@ section.visible {
 }
 
 #introduction {
-  opacity: 1; /* Ensure the introduction section is always visible */
-  transform: translateY(0); /* No animation for the first section */
-  transition: none; /* Disable transition for immediate visibility */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure it takes up the full viewport height */
+  padding: 20px; /* Remove extra padding */
+  margin: 0; /* Remove margin to align properly */
+  opacity: 1 !important; /* Ensure the introduction section is always visible */
+  transform: none !important; /* Prevent any fade-in or animation */
 }
 
 #introduction .scroll-indicator {
@@ -367,6 +383,14 @@ section.visible {
   transform: scale(1.05); /* Subtle zoom effect */
 }
 
+.timeline ul li a:hover {
+  background-color: var(
+    --accent-color
+  ); /* Revert to the previous hover color */
+  color: #fff;
+  border-radius: 5px; /* Keep rounded corners */
+}
+
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -400,6 +424,13 @@ section.visible {
   transition: width var(--transition-duration) ease-in-out,
     box-shadow var(--transition-duration) ease-in-out;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Add depth to progress bars */
+}
+
+/* Add icons to the skills section */
+.skill::before {
+  content: url("images/skill-icon.png"); /* Replace with actual icon path */
+  display: block;
+  margin: 0 auto 10px;
 }
 
 .hidden {
@@ -581,11 +612,12 @@ form textarea:focus {
   animation: arrow-bounce 1.5s infinite;
 }
 
+/* Add a back-to-top button */
 .back-to-top {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: var(--accent-color);
+  background-color: var(--accent-color);
   color: #fff;
   border: none;
   border-radius: 50%;
