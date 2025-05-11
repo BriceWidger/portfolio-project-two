@@ -297,6 +297,9 @@ section.visible {
   justify-content: center;
   gap: 10px; /* Add spacing between tech items */
   align-items: center; /* Align items on the same x-axis */
+  flex-wrap: wrap; /* Allow wrapping of items */
+  word-wrap: break-word; /* Ensure long words break properly */
+  justify-content: center; /* Maintain center alignment */
 }
 
 /* Ensure project action buttons are aligned horizontally */
