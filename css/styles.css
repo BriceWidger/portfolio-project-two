@@ -831,3 +831,10 @@ form textarea:focus {
     font-size: 0.9rem; /* Adjusted scroll indicator size */
   }
 }
+
+/* Fix background-attachment issue on iOS (including Chrome and Safari) */
+@supports (-webkit-touch-callout: none) {
+  body {
+    background-attachment: scroll !important;
+  }
+}
