@@ -5,7 +5,7 @@ body {
   min-height: 100%; /* Allow content to grow beyond viewport height */
   height: auto; /* Ensure height adjusts to content */
   overflow-x: hidden; /* Prevent horizontal scrolling */
-  color-scheme: light !important;
+  color-scheme: only light !important;
   background-color: var(--background-color) !important;
   color: var(--text-color) !important;
 }
@@ -49,8 +49,12 @@ body {
 
 /* Force light mode regardless of user's system preference */
 @media (prefers-color-scheme: dark) {
+  html,
+  body,
   :root {
-    color-scheme: light !important;
+    color-scheme: only light !important;
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
     --background-color: #f4f4f9;
     --text-color: #333333;
     --link-color: #0077cc;
