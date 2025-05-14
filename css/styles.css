@@ -56,14 +56,14 @@ h3 {
 }
 
 h1 {
-  font-size: 2.8rem; /* Slightly reduced for balance */
+  font-size: 3rem; /* Increase font size for better emphasis */
   margin-bottom: 24px; /* Adjusted spacing */
   font-weight: 700;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow for better contrast */
 }
 
 h2 {
-  font-size: 2.2rem; /* Slightly reduced for balance */
+  font-size: 2.4rem; /* Adjust font size for better hierarchy */
   margin-bottom: 20px; /* Adjusted spacing */
   font-weight: 600;
 }
@@ -76,7 +76,7 @@ h3 {
 
 p {
   font-size: 1rem; /* Standardized font size for paragraphs */
-  line-height: 1.8; /* Improved readability */
+  line-height: 1.75; /* Slightly increase line height for readability */
   margin-bottom: 16px; /* Consistent spacing */
   margin-top: 0; /* Remove unnecessary top margin */
 }
@@ -116,8 +116,8 @@ button {
 /* Improved button hover effect for better user experience */
 button:hover {
   background-color: #e55b50; /* Slightly lighter shade for hover */
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+  transform: translateY(-3px); /* Adjusted hover lift */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
   transform: scale(1.05);
 }
 
@@ -185,15 +185,15 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 60px 20px; /* Adjusted padding for better spacing */
+  padding: 80px 20px; /* Increased padding for better spacing */
   text-align: center;
-  gap: 40px; /* Maintain consistent spacing between sections */
+  gap: 50px; /* Ensure consistent spacing between sections */
 }
 
 .content-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 40px 20px; /* Adjusted padding for better spacing */
   background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -202,11 +202,20 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px; /* Ensure even spacing between child elements */
+  gap: 25px; /* Increased gap for better spacing between child elements */
   transition: transform var(--transition-duration) ease-in-out,
     box-shadow var(--transition-duration) ease-in-out,
     border-color var(--transition-duration) ease-in-out;
   will-change: transform; /* Optimize for transform changes */
+}
+
+#about .content-container,
+#skills .content-container,
+#projects .content-container,
+#education .content-container,
+#contact .content-container {
+  padding: 50px 30px; /* Unified padding for all sections */
+  gap: 30px; /* Consistent spacing between child elements */
 }
 
 /* Add animation for section transitions */
@@ -320,9 +329,54 @@ section.visible {
 }
 
 /* Add hover effect for project cards */
+.project-card {
+  background: var(--card-background);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--card-shadow);
+  transition: transform var(--transition-duration) ease-in-out,
+    box-shadow var(--transition-duration) ease-in-out,
+    background-color var(--transition-duration) ease-in-out;
+  overflow: hidden;
+  margin-bottom: 20px;
+  max-width: 340px;
+  flex: 1 1 calc(50% - 40px);
+  padding: 25px; /* Increased padding for better spacing */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch; /* Stretch content to align */
+  gap: 20px; /* Ensure even spacing between child elements */
+}
+
 .project-card:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: transform 0.3s ease-in-out; /* Add smooth hover effect */
+}
+
+.project-card img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.project-card-content {
+  padding: 20px; /* Increase padding for better spacing */
+  text-align: left; /* Align text to the left for better readability */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Ensure consistent height for content */
+  gap: 20px; /* Add spacing between elements */
+}
+
+.project-tech {
+  margin-bottom: 15px; /* Add margin to separate from buttons */
 }
 
 .content-container:hover {
@@ -382,7 +436,8 @@ section.visible {
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem; /* Standardized font size for navigation links */
-  padding: 8px 12px; /* Adjusted padding for balance */
+  padding: 10px 15px; /* Adjust padding for better click area */
+  text-align: center; /* Ensure text is centered within the link */
   transition: background-color var(--transition-duration) ease-in-out,
     box-shadow var(--transition-duration) ease-in-out;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for navigation links */
@@ -408,12 +463,13 @@ section.visible {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px; /* Even spacing between skill items */
+  gap: 50px; /* Increased spacing between skill items */
 }
 
 .skill {
   width: 120px;
   text-align: center;
+  max-width: 150px; /* Limit skill width for better alignment */
 }
 
 .skill h3 {
@@ -461,10 +517,10 @@ footer {
   text-align: center;
   color: var(--text-color);
   margin-top: 35px;
-  padding: 20px; /* Adjusted for better spacing */
+  padding: 30px; /* Increased padding for better spacing */
   background: var(--card-background);
   box-shadow: 0 -4px 8px var(--card-shadow);
-  font-size: 0.9rem; /* Standardized font size */
+  font-size: 1rem; /* Standardized font size */
   border-top: 1px solid var(--border-color); /* Add a subtle border for separation */
 }
 
@@ -539,61 +595,15 @@ form textarea:focus {
   align-items: stretch; /* Stretch all cards to the same height */
 }
 
-.project-card {
-  background: var(--card-background);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px var(--card-shadow);
-  transition: transform var(--transition-duration) ease-in-out,
-    box-shadow var(--transition-duration) ease-in-out,
-    background-color var(--transition-duration) ease-in-out;
-  overflow: hidden;
-  margin-bottom: 20px;
-  max-width: 340px;
-  flex: 1 1 calc(50% - 40px);
-  padding: 20px; /* Consistent padding */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch; /* Stretch content to align */
-
-  gap: 15px; /* Even spacing between child elements */
-}
-
-.project-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  cursor: pointer; /* Change cursor to pointer on hover */
-  transition: transform 0.3s ease-in-out; /* Add smooth hover effect */
-}
-
-.project-card img:hover {
-  transform: scale(1.05); /* Slight zoom effect on hover */
-}
-
-.project-card-content {
-  padding: 15px 0; /* Set padding to 15px for top and bottom only */
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%; /* Ensure consistent height for content */
-  gap: 20px; /* Add spacing between elements */
-}
-
-.project-tech {
-  margin-bottom: 15px; /* Add margin to separate from buttons */
-}
-
 /* Scroll Indicator */
 .scroll-indicator {
   position: absolute; /* Position relative to the section */
-  bottom: 20px; /* Place it at the bottom of the section */
+  bottom: 30px; /* Increased bottom margin */
   left: 50%;
   transform: translateX(-50%);
   text-decoration: none;
   color: rgba(255, 255, 255, 0.9); /* Match arrow color */
-  font-size: 1rem;
+  font-size: 1.1rem; /* Slightly larger font size */
   font-weight: bold;
   text-transform: uppercase;
   padding: 10px 20px;
@@ -623,6 +633,20 @@ form textarea:focus {
   transform: rotate(45deg);
   margin: 0 auto;
   animation: arrow-bounce 1.5s infinite;
+}
+
+/* Hide scroll indicator for viewport heights smaller than 932px or widths smaller than 1028px */
+@media (max-height: 932px), (max-width: 1027px) {
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+/* Ensure scroll indicator is visible for heights 932px or higher and widths 1028px or higher */
+@media (min-height: 932px) and (min-width: 1028px) {
+  .scroll-indicator {
+    display: block;
+  }
 }
 
 /* Add a back-to-top button */
@@ -723,18 +747,20 @@ form textarea:focus {
   }
 
   .full-page {
-    padding: 80px 15px; /* Adjust section padding for smaller screens */
-    gap: 40px; /* Adjust spacing between sections */
+    padding: 60px 15px; /* Adjusted padding for smaller screens */
+    gap: 40px; /* Reduced spacing between sections */
   }
 
   .project-card {
     margin: 15px;
     flex: 1 1 calc(100% - 30px); /* Full width for smaller screens */
+    padding: 20px; /* Adjusted padding for smaller screens */
   }
 
   .skills {
     flex-direction: column;
     align-items: center;
+    gap: 30px; /* Reduced spacing for smaller screens */
   }
 
   .skill {
@@ -787,8 +813,8 @@ form textarea:focus {
   }
 
   .full-page {
-    padding: 60px 10px; /* Further adjust section padding */
-    gap: 30px; /* Reduce spacing between sections */
+    padding: 50px 10px; /* Further reduced padding for very small screens */
+    gap: 30px; /* Reduced spacing between sections */
   }
 
   .project-card {
@@ -796,6 +822,6 @@ form textarea:focus {
   }
 
   .scroll-indicator {
-    font-size: 0.8rem; /* Adjust scroll indicator size */
+    font-size: 0.9rem; /* Adjusted scroll indicator size */
   }
 }

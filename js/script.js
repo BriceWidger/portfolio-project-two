@@ -62,23 +62,32 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Add functionality for back-to-top button
-  const backToTopButton = document.createElement('button');
-  backToTopButton.classList.add('back-to-top');
-  backToTopButton.innerHTML = '↑';
+  const backToTopButton = document.createElement("button");
+  backToTopButton.classList.add("back-to-top");
+  backToTopButton.innerHTML = "↑";
   document.body.appendChild(backToTopButton);
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     handleScroll();
     checkScrollIndicator();
 
     if (window.scrollY > 300) {
-      backToTopButton.classList.add('visible');
+      backToTopButton.classList.add("visible");
     } else {
-      backToTopButton.classList.remove('visible');
+      backToTopButton.classList.remove("visible");
     }
   });
 
-  backToTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
   });
 });
