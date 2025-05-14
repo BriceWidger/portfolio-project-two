@@ -729,6 +729,19 @@ form textarea:focus {
   }
 }
 
+@media (max-width: 900px) {
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .project-card {
+    max-width: 95%;
+    width: 100%;
+    margin-bottom: 24px;
+    flex: 1 1 100%;
+  }
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 2.4rem;
