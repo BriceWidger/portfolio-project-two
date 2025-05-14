@@ -367,7 +367,7 @@ section.visible {
 
 .project-card-content {
   padding: 20px; /* Increase padding for better spacing */
-  text-align: left; /* Align text to the left for better readability */
+  text-align: center; /* Center content including h3 */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
