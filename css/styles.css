@@ -339,6 +339,16 @@ section.visible {
   margin-bottom: 20px; /* Ensure consistent spacing */
 }
 
+.profile-pic {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  object-position: 80% 40%; /* Move image up a bit, adjust X% Y% as needed */
+  max-width: none;
+  border-radius: 50%;
+  border: 3px solid var(--border-color);
+}
+
 .timeline {
   width: 100%;
   background: var(--card-background);
