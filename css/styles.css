@@ -44,6 +44,27 @@ body {
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Force light mode regardless of user's system preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light;
+    --background-color: #f4f4f9;
+    --text-color: #333333;
+    --link-color: #0077cc;
+    --link-hover-color: #005fa3;
+    --card-background: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --border-color: #e0e0e0;
+    --progress-background: #e6e6e6;
+    --progress-bar: #0077cc;
+    --accent-color: #ff6f61;
+  }
+  body {
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+  }
+}
+
 /* Typography Improvements */
 h1,
 h2,
