@@ -30,12 +30,19 @@ body:before {
   width: 100vw;
   height: 100vh;
   z-index: -10;
-  background: url("/images/city-architecture-landscape-digital-art.jpg") no-repeat center center;
+  background: url("/images/city-architecture-landscape-digital-art.jpg")
+    no-repeat center center;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   pointer-events: none;
   background-color: #f4f4f9;
+  -webkit-filter: none !important;
+  filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-color-scheme: light;
+  color-scheme: light;
 }
 
 :root {
