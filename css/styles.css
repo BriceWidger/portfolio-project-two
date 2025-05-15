@@ -27,6 +27,16 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Remove background-attachment for all mobile devices (iOS and Android) */
+@media (max-width: 1024px), (pointer: coarse) {
+  body {
+    background-attachment: scroll !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+  }
+}
+
 /* --- iOS background image fix: override ONLY background-attachment for iOS browsers --- */
 @supports (-webkit-touch-callout: none) {
   body {
