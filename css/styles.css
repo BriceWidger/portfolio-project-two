@@ -18,7 +18,7 @@ body {
   line-height: 1.6; /* Adjusted for better readability */
   margin: 0;
   padding: 0; /* Removed unnecessary padding */
-  background-image: url("/images/city-architecture-landscape-digital-art.jpg");
+  background-image: url("../images/city-architecture-landscape-digital-art.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
