@@ -45,6 +45,8 @@ body:before {
   /* Remove any filter or opacity that could cause color distortion */
   filter: none !important;
   opacity: 1 !important;
+  /* Remove mix-blend-mode or any blend mode if present */
+  mix-blend-mode: normal !important;
 }
 
 :root {
