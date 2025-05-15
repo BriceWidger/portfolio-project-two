@@ -7,6 +7,8 @@ body {
   overflow-x: hidden;
   background-color: transparent !important;
   color: var(--text-color);
+  forced-color-adjust: none !important;
+  -webkit-forced-color-adjust: none !important;
 }
 
 body {
@@ -41,6 +43,10 @@ body:before {
   filter: none !important;
   -webkit-backdrop-filter: none !important;
   backdrop-filter: none !important;
+  -webkit-color-scheme: only light;
+  color-scheme: only light;
+  forced-color-adjust: none !important;
+  -webkit-forced-color-adjust: none !important;
   -webkit-color-scheme: light;
   color-scheme: light;
 }
