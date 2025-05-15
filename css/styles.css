@@ -5,23 +5,18 @@ body {
   min-height: 100%;
   height: auto;
   overflow-x: hidden;
-  background-color: var(--background-color);
+  background-color: transparent !important;
   color: var(--text-color);
 }
 
 body {
-  background-color: var(--background-color);
+  background-color: transparent !important;
   color: var(--text-color);
   font-family: "Roboto", sans-serif;
   font-size: 16px; /* Set a base font size for consistency */
   line-height: 1.6; /* Adjusted for better readability */
   margin: 0;
   padding: 0; /* Removed unnecessary padding */
-  background-image: url("/images/city-architecture-landscape-digital-art.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   cursor: url("images/custom-cursor.png"), auto;
   scroll-behavior: smooth;
 }
