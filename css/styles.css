@@ -22,7 +22,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   cursor: url("images/custom-cursor.png"), auto;
   scroll-behavior: smooth;
 }
@@ -864,7 +864,5 @@ form textarea:focus {
 @supports (-webkit-touch-callout: none) {
   body {
     background-attachment: scroll !important;
-    background-size: contain !important;
-    background-position: top center !important;
   }
 }
