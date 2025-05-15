@@ -14,21 +14,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const handleScroll = () => {
     let current = "";
 
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
+    // If at the very top, set current to introduction
+    if (window.scrollY === 0) {
+      current = "introduction";
+    } else {
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
 
-      if (
-        section.id !== "introduction" &&
-        window.scrollY + window.innerHeight >= sectionTop + sectionHeight / 4
-      ) {
-        section.classList.add("visible");
-      }
+        if (
+          section.id !== "introduction" &&
+          window.scrollY + window.innerHeight >= sectionTop + sectionHeight / 4
+        ) {
+          section.classList.add("visible");
+        }
 
-      if (window.scrollY >= sectionTop - 60) {
-        current = section.getAttribute("id");
-      }
-    });
+        if (window.scrollY >= sectionTop - 60) {
+          current = section.getAttribute("id");
+        }
+      });
+    }
 
     navLinks.forEach((link) => {
       link.classList.remove("active");
@@ -90,4 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+
+  // Ensure nav link is active on initial page load
+  handleScroll();
 });

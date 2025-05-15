@@ -460,25 +460,38 @@ section.visible {
 }
 
 .timeline ul li a {
-  color: #fff;
-  background-color: var(--accent-color);
+  color: var(--text-color);
   text-decoration: none;
   font-weight: bold;
-  font-size: 1rem;
-  padding: 10px 15px;
-  text-align: center;
+  font-size: 1rem; /* Standardized font size for navigation links */
+  padding: 10px 15px; /* Adjust padding for better click area */
+  text-align: center; /* Ensure text is centered within the link */
   transition: background-color var(--transition-duration) ease-in-out,
     box-shadow var(--transition-duration) ease-in-out;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for navigation links */
 }
 
 .timeline ul li a:hover,
 .timeline ul li a.active {
   background-color: var(--accent-color);
   color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance hover and active effects */
+  transform: scale(1.05); /* Subtle zoom effect */
+}
+
+.timeline ul li a[href="#introduction"].active {
+  background-color: var(--accent-color);
+  color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
+}
+
+.timeline ul li a:hover {
+  background-color: var(
+    --accent-color
+  ); /* Revert to the previous hover color */
+  color: #fff;
+  border-radius: 5px; /* Keep rounded corners */
 }
 
 .skills {
