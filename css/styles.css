@@ -35,18 +35,11 @@ body:before {
   width: 100vw;
   height: 100vh;
   z-index: -10;
-  background: url("/images/city-architecture-landscape-digital-art.jpg")
-    no-repeat center center;
+  background: url("/images/city-architecture-landscape-digital-art.jpg") no-repeat center center;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  /* Remove pointer-events and all color/opacity filters to avoid color distortion */
   pointer-events: none;
-  /* Remove any filter or opacity that could cause color distortion */
-  filter: none !important;
-  opacity: 1 !important;
-  /* Remove mix-blend-mode or any blend mode if present */
-  mix-blend-mode: normal !important;
 }
 
 :root {
