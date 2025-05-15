@@ -1,13 +1,12 @@
 html,
 body {
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  min-height: 100%; /* Allow content to grow beyond viewport height */
-  height: auto; /* Ensure height adjusts to content */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  color-scheme: only light !important;
-  background-color: var(--background-color) !important;
-  color: var(--text-color) !important;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  height: auto;
+  overflow-x: hidden;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 body {
