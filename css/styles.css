@@ -31,7 +31,7 @@ body {
 @supports (-webkit-touch-callout: none) {
   body {
     background-attachment: scroll !important;
-    background-size: cover !important;
+    background-size: contain !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
   }
@@ -874,7 +874,7 @@ form textarea:focus {
 @supports (-webkit-touch-callout: none) {
   body {
     background-attachment: scroll !important;
-    background-size: cover !important;
+    background-size: contain !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
   }
