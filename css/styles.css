@@ -18,13 +18,19 @@ body {
   line-height: 1.6; /* Adjusted for better readability */
   margin: 0;
   padding: 0; /* Removed unnecessary padding */
-  background-image: url("../images/city-architecture-landscape-digital-art.jpg");
+  background-image: url("/images/city-architecture-landscape-digital-art.jpg"); /* Use absolute path */
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  cursor: url("images/custom-cursor.png"), auto;
+  background-attachment: scroll; /* Default to scroll for all */
+  cursor: url("/images/custom-cursor.png"), auto;
   scroll-behavior: smooth;
+}
+
+@media (min-width: 1025px) and (pointer: fine) {
+  body {
+    background-attachment: fixed;
+  }
 }
 
 /* Remove background-attachment for all mobile devices (iOS and Android) */
