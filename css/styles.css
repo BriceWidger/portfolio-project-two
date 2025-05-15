@@ -35,6 +35,7 @@ body:before {
   background-repeat: no-repeat;
   background-position: center center;
   pointer-events: none;
+  background-color: #f4f4f9;
 }
 
 :root {
