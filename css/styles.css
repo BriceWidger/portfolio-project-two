@@ -46,6 +46,7 @@ body:before {
 }
 
 :root {
+  color-scheme: light;
   --background-color: #f4f4f9;
   --text-color: #333333;
   --link-color: #0077cc;
