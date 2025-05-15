@@ -27,11 +27,11 @@ body {
   scroll-behavior: smooth;
 }
 
-/* --- iOS background image fix: override ALL background-attachment and sizing for iOS browsers --- */
+/* --- iOS background image fix: override ONLY background-attachment for iOS browsers --- */
 @supports (-webkit-touch-callout: none) {
   body {
     background-attachment: scroll !important;
-    background-size: contain !important;
+    background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
   }
@@ -874,7 +874,7 @@ form textarea:focus {
 @supports (-webkit-touch-callout: none) {
   body {
     background-attachment: scroll !important;
-    background-size: contain !important;
+    background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
   }
