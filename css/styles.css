@@ -5,9 +5,6 @@ body {
   min-height: 100%; /* Allow content to grow beyond viewport height */
   height: auto; /* Ensure height adjusts to content */
   overflow-x: hidden; /* Prevent horizontal scrolling */
-  color-scheme: only light !important;
-  background-color: var(--background-color) !important;
-  color: var(--text-color) !important;
 }
 
 body {
@@ -18,25 +15,13 @@ body {
   line-height: 1.6; /* Adjusted for better readability */
   margin: 0;
   padding: 0; /* Removed unnecessary padding */
-  background: none !important; /* Remove background image from body for mobile fix */
+  background-image: url("/images/city-architecture-landscape-digital-art.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   cursor: url("images/custom-cursor.png"), auto;
   scroll-behavior: smooth;
-}
-
-body:before {
-  content: "";
-  display: block;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -10;
-  background: url("/images/city-architecture-landscape-digital-art.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 
 :root {
@@ -57,31 +42,6 @@ body:before {
 
 body {
   overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
-/* Force light mode regardless of user's system preference */
-@media (prefers-color-scheme: dark) {
-  html,
-  body,
-  :root {
-    color-scheme: only light !important;
-    background-color: var(--background-color) !important;
-    color: var(--text-color) !important;
-    --background-color: #f4f4f9;
-    --text-color: #333333;
-    --link-color: #0077cc;
-    --link-hover-color: #005fa3;
-    --card-background: #ffffff;
-    --card-shadow: rgba(0, 0, 0, 0.1);
-    --border-color: #e0e0e0;
-    --progress-background: #e6e6e6;
-    --progress-bar: #0077cc;
-    --accent-color: #ff6f61;
-  }
-  body {
-    background-color: var(--background-color) !important;
-    color: var(--text-color) !important;
-  }
 }
 
 /* Typography Improvements */
