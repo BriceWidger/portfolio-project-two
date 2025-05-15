@@ -18,39 +18,25 @@ body {
   line-height: 1.6; /* Adjusted for better readability */
   margin: 0;
   padding: 0; /* Removed unnecessary padding */
-  background-image: url("/images/city-architecture-landscape-digital-art.jpg"); /* Use absolute path */
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: scroll; /* Default to scroll for all */
-  cursor: url("/images/custom-cursor.png"), auto;
+  background: none !important; /* Remove background image from body for mobile fix */
+  cursor: url("images/custom-cursor.png"), auto;
   scroll-behavior: smooth;
 }
 
-@media (min-width: 1025px) and (pointer: fine) {
-  body {
-    background-attachment: fixed;
-  }
-}
-
-/* Remove background-attachment for all mobile devices (iOS and Android) */
-@media (max-width: 1024px), (pointer: coarse) {
-  body {
-    background-attachment: scroll !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-  }
-}
-
-/* --- iOS background image fix: override ONLY background-attachment for iOS browsers --- */
-@supports (-webkit-touch-callout: none) {
-  body {
-    background-attachment: scroll !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-  }
+body:before {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  background: url("/images/city-architecture-landscape-digital-art.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 :root {
@@ -890,8 +876,5 @@ form textarea:focus {
 @supports (-webkit-touch-callout: none) {
   body {
     background-attachment: scroll !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
   }
 }
