@@ -904,9 +904,12 @@ form textarea:focus {
     body {
       background: url("/images/city-architecture-landscape-digital-art.jpg") no-repeat center center !important;
       background-size: cover !important;
-      background-attachment: scroll !important;
+      background-attachment: fixed !important;
       background-position: center center !important;
       background-color: #f4f4f9 !important;
+      /* Ensure body covers full viewport */
+      min-height: 100vh !important;
+      width: 100% !important;
       /* Prevent zoom and scaling issues */
       -webkit-transform: translateZ(0) !important;
       transform: translateZ(0) !important;
@@ -916,7 +919,9 @@ form textarea:focus {
     }
     
     html {
-      /* Ensure stable viewport */
+      /* Ensure stable viewport and full height */
+      height: 100% !important;
+      width: 100% !important;
       -webkit-text-size-adjust: 100% !important;
       text-size-adjust: 100% !important;
     }
