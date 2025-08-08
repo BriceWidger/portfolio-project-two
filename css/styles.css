@@ -892,38 +892,5 @@ form textarea:focus {
   }
 }
 
-/* Specific fix for Google app (not Chrome) WebView on iOS */
-@media screen and (max-device-width: 767px) {
-  @supports (-webkit-touch-callout: none) {
-    /* Hide the pseudo-element background for Google app */
-    body:before {
-      display: none !important;
-    }
-    
-    /* Apply background directly to body for Google app */
-    body {
-      background: url("/images/city-architecture-landscape-digital-art.jpg") no-repeat center center !important;
-      background-size: 100% auto !important;
-      background-attachment: scroll !important;
-      background-position: center top !important;
-      background-color: #f4f4f9 !important;
-      /* Ensure body covers full viewport */
-      min-height: 100vh !important;
-      width: 100% !important;
-      /* Prevent zoom and scaling issues */
-      -webkit-transform: translateZ(0) !important;
-      transform: translateZ(0) !important;
-      -webkit-overflow-scrolling: touch !important;
-      -webkit-text-size-adjust: 100% !important;
-      text-size-adjust: 100% !important;
-    }
-    
-    html {
-      /* Ensure stable viewport and full height */
-      height: 100% !important;
-      width: 100% !important;
-      -webkit-text-size-adjust: 100% !important;
-      text-size-adjust: 100% !important;
-    }
-  }
-}
+/* Note: Google Search app WebView has known background rendering issues.
+   Users can tap "Open in Safari" for optimal viewing experience. */
