@@ -903,9 +903,9 @@ form textarea:focus {
     /* Apply background directly to body for Google app */
     body {
       background: url("/images/city-architecture-landscape-digital-art.jpg") no-repeat center center !important;
-      background-size: cover !important;
-      background-attachment: fixed !important;
-      background-position: center center !important;
+      background-size: 100% auto !important;
+      background-attachment: scroll !important;
+      background-position: center top !important;
       background-color: #f4f4f9 !important;
       /* Ensure body covers full viewport */
       min-height: 100vh !important;
