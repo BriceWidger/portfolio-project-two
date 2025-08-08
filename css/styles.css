@@ -895,41 +895,24 @@ form textarea:focus {
 /* Specific fix for Google app (not Chrome) WebView on iOS */
 @media screen and (max-device-width: 767px) {
   @supports (-webkit-touch-callout: none) {
+    /* Hide the pseudo-element background for Google app */
     body:before {
-      /* Keep fixed positioning but adjust for Google app issues */
-      position: fixed !important;
-      top: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-      bottom: 0 !important;
-      width: 100vw !important;
-      height: 100vh !important;
-      min-height: 100vh !important;
-      max-height: 100vh !important;
-      /* Try different background attachment */
-      background-attachment: scroll !important;
-      background-size: cover !important;
-      background-position: center center !important;
-      background-repeat: no-repeat !important;
-      /* Disable all transforms and animations to prevent zoom */
-      -webkit-transform: translate3d(0, 0, 0) !important;
-      transform: translate3d(0, 0, 0) !important;
-      -webkit-transform-style: flat !important;
-      transform-style: flat !important;
-      will-change: auto !important;
-      /* Force layer compositing without triggering zoom */
-      -webkit-backface-visibility: hidden !important;
-      backface-visibility: hidden !important;
-      /* Prevent any viewport scaling */
-      -webkit-user-select: none !important;
-      user-select: none !important;
+      display: none !important;
     }
     
+    /* Apply background directly to body for Google app */
     body {
-      /* Prevent the body from causing any scroll issues */
+      background: url("/images/city-architecture-landscape-digital-art.jpg") no-repeat center center !important;
+      background-size: cover !important;
+      background-attachment: scroll !important;
+      background-position: center center !important;
+      background-color: #f4f4f9 !important;
+      /* Prevent zoom and scaling issues */
       -webkit-transform: translateZ(0) !important;
       transform: translateZ(0) !important;
       -webkit-overflow-scrolling: touch !important;
+      -webkit-text-size-adjust: 100% !important;
+      text-size-adjust: 100% !important;
     }
     
     html {
