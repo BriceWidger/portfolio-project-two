@@ -798,9 +798,12 @@ form textarea:focus {
   }
 
   .project-card {
-    margin: 15px;
-    flex: 1 1 calc(100% - 30px); /* Full width for smaller screens */
-    padding: 20px; /* Adjusted padding for smaller screens */
+    margin: 0 auto 20px auto; /* Center horizontally with bottom spacing */
+    flex: none; /* Remove flex to prevent overflow */
+    width: calc(100% - 40px); /* Account for card's internal padding */
+    max-width: 300px; /* Reasonable max width for mobile */
+    padding: 20px; /* Internal padding - accounted for in width calc */
+    box-sizing: border-box; /* Include padding in width calculation */
   }
 
   .skills {
