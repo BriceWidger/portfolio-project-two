@@ -37,6 +37,7 @@ body:before {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  background-attachment: scroll; /* Fix for iOS Safari zoom issue */
   pointer-events: none;
   background-color: #f4f4f9;
   -webkit-filter: none !important;
@@ -48,6 +49,10 @@ body:before {
   forced-color-adjust: none !important;
   -webkit-forced-color-adjust: none !important;
   -webkit-color-scheme: light;
+  /* iOS Safari specific fixes */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
   color-scheme: light;
 }
 
@@ -870,6 +875,19 @@ form textarea:focus {
 /* Fix background-attachment issue on iOS (including Chrome and Safari) */
 @supports (-webkit-touch-callout: none) {
   body {
+    /* Prevent iOS from zooming/bouncing during scroll */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body:before {
     background-attachment: scroll !important;
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    will-change: transform !important;
+    /* Force hardware acceleration to prevent zoom effect */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
   }
 }
