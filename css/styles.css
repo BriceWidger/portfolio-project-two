@@ -762,6 +762,23 @@ form textarea:focus {
   }
 }
 
+/* Fix navigation text wrapping in intermediate screen sizes */
+@media (max-width: 870px) and (min-width: 769px) {
+  .timeline ul li a {
+    font-size: 0.85rem; /* Slightly smaller font to prevent wrapping */
+    padding: 8px 8px; /* Reduce padding to save space */
+    white-space: nowrap; /* Force single line */
+  }
+
+  .timeline ul li {
+    margin: 0 8px; /* Reduce margin between items */
+  }
+
+  .timeline ul {
+    gap: 8px; /* Reduce gap between items */
+  }
+}
+
 @media (max-width: 900px) {
   .projects-container {
     flex-direction: column;
