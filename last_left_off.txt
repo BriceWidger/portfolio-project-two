@@ -1,5 +1,0 @@
-5/14/25:
-
-1. fix background image sizing as it does not look good on IOS phone
-
-2. fix light/dark theme, as it is automatically turning dark theme on iphone/andriod
