@@ -53,11 +53,6 @@ body:before {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   will-change: transform;
-  /* Additional WebView browser fixes */
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   color-scheme: light;
 }
 
